@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="RELAY: Accelerating Online VLA Reinforcement Learning through Adaptive Semantic Reuse">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RELAY</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section class="hero">
+    <div class="container narrow center">
+      <h1>RELAY: Accelerating Online VLA Reinforcement Learning through Adaptive Semantic Reuse</h1>
+      <p class="authors">Anonymous Authors</p>
+      <div class="links">
+        <a class="button" href="#abstract">Abstract</a>
+        <a class="button" href="#simulation">Simulation</a>
+        <a class="button" href="#real-world">Real Robot</a>
+        <a class="button" href="https://github.com/relay-official/relay-official.github.io">Code</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="section teaser">
+      <div class="container narrow center">
+        <h2>One semantic packet, several fresh decisions.</h2>
+        <p>RELAY reuses cached semantic representations across nearby decisions and refreshes them as the scene changes, enabling faster online VLA reinforcement learning.</p>
+      </div>
+    </section>
+
+    <section class="section" id="abstract">
+      <div class="container text-column">
+        <h2 class="section-title">Abstract</h2>
+        <p>
+          Vision-language-action (VLA) policies owe much of their semantic competence to pretrained vision-language backbones. In online reinforcement learning, however, the same backbone imposes a recurring computational cost: repeated semantic inference occupies the action-generation critical path and throttles experience collection. We present RELAY, which decouples the two processes by reusing cached semantic representations across nearby decisions and refreshing them as the scene changes. A lightweight temporal adapter aligns cached semantics with the current execution context, allowing the action policy to maintain high-frequency closed-loop control while semantic inference proceeds asynchronously. In simulation, RELAY delivers 1.70× the rollout throughput of the synchronous baseline and reduces complete online-RL time by 26.5%, while maintaining final task success comparable to the evaluated baselines. Under a fixed two-hour real-robot learning budget, this efficiency translates into 87.5% terminal success across four manipulation tasks, 18.75 percentage points above the strongest evaluated baseline.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="simulation">
+      <div class="container">
+        <div class="section-heading">
+          <h2 class="section-title">Simulation Results</h2>
+          <p>Experiment 1: wall-clock learning efficiency on LIBERO-10.</p>
+        </div>
+
+        <div class="video-grid five-columns">
+          <article class="video-item">
+            <!-- videos/simulation/relay.mp4 -->
+            <div class="video-placeholder">Video</div>
+            <h3>RELAY</h3>
+          </article>
+          <article class="video-item">
+            <!-- videos/simulation/prl.mp4 -->
+            <div class="video-placeholder">Video</div>
+            <h3>πRL</h3>
+          </article>
+          <article class="video-item">
+            <!-- videos/simulation/reinflow.mp4 -->
+            <div class="video-placeholder">Video</div>
+            <h3>ReinFlow</h3>
+          </article>
+          <article class="video-item">
+            <!-- videos/simulation/latent-bridge.mp4 -->
+            <div class="video-placeholder">Video</div>
+            <h3>Latent-Bridge</h3>
+          </article>
+          <article class="video-item">
+            <!-- videos/simulation/sp-vla.mp4 -->
+            <div class="video-placeholder">Video</div>
+            <h3>SP-VLA</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="real-world">
+      <div class="container">
+        <div class="section-heading">
+          <h2 class="section-title">Real-World Results</h2>
+          <p>Experiment 4: adaptation under a fixed two-hour online-RL budget.</p>
+        </div>
+
+        <section class="task-section">
+          <h3 class="task-title">Clean the Pan</h3>
+          <div class="video-grid five-columns">
+            <article class="video-item"><!-- videos/real/clean-the-pan/relay.mp4 --><div class="video-placeholder">Video</div><h4>RELAY</h4></article>
+            <article class="video-item"><!-- videos/real/clean-the-pan/hil-serl.mp4 --><div class="video-placeholder">Video</div><h4>HIL-SERL</h4></article>
+            <article class="video-item"><!-- videos/real/clean-the-pan/latent-bridge.mp4 --><div class="video-placeholder">Video</div><h4>Latent-Bridge</h4></article>
+            <article class="video-item"><!-- videos/real/clean-the-pan/sp-vla.mp4 --><div class="video-placeholder">Video</div><h4>SP-VLA</h4></article>
+            <article class="video-item"><!-- videos/real/clean-the-pan/comparison-5.mp4 --><div class="video-placeholder">Video</div><h4>Comparison 5</h4></article>
+          </div>
+        </section>
+
+        <section class="task-section">
+          <h3 class="task-title">Open the Drawer</h3>
+          <div class="video-grid five-columns">
+            <article class="video-item"><!-- videos/real/open-the-drawer/relay.mp4 --><div class="video-placeholder">Video</div><h4>RELAY</h4></article>
+            <article class="video-item"><!-- videos/real/open-the-drawer/hil-serl.mp4 --><div class="video-placeholder">Video</div><h4>HIL-SERL</h4></article>
+            <article class="video-item"><!-- videos/real/open-the-drawer/latent-bridge.mp4 --><div class="video-placeholder">Video</div><h4>Latent-Bridge</h4></article>
+            <article class="video-item"><!-- videos/real/open-the-drawer/sp-vla.mp4 --><div class="video-placeholder">Video</div><h4>SP-VLA</h4></article>
+            <article class="video-item"><!-- videos/real/open-the-drawer/comparison-5.mp4 --><div class="video-placeholder">Video</div><h4>Comparison 5</h4></article>
+          </div>
+        </section>
+
+        <section class="task-section">
+          <h3 class="task-title">Stack the Blocks</h3>
+          <div class="video-grid five-columns">
+            <article class="video-item"><!-- videos/real/stack-the-blocks/relay.mp4 --><div class="video-placeholder">Video</div><h4>RELAY</h4></article>
+            <article class="video-item"><!-- videos/real/stack-the-blocks/hil-serl.mp4 --><div class="video-placeholder">Video</div><h4>HIL-SERL</h4></article>
+            <article class="video-item"><!-- videos/real/stack-the-blocks/latent-bridge.mp4 --><div class="video-placeholder">Video</div><h4>Latent-Bridge</h4></article>
+            <article class="video-item"><!-- videos/real/stack-the-blocks/sp-vla.mp4 --><div class="video-placeholder">Video</div><h4>SP-VLA</h4></article>
+            <article class="video-item"><!-- videos/real/stack-the-blocks/comparison-5.mp4 --><div class="video-placeholder">Video</div><h4>Comparison 5</h4></article>
+          </div>
+        </section>
+
+        <section class="task-section">
+          <h3 class="task-title">Place the Object</h3>
+          <div class="video-grid five-columns">
+            <article class="video-item"><!-- videos/real/place-the-object/relay.mp4 --><div class="video-placeholder">Video</div><h4>RELAY</h4></article>
+            <article class="video-item"><!-- videos/real/place-the-object/hil-serl.mp4 --><div class="video-placeholder">Video</div><h4>HIL-SERL</h4></article>
+            <article class="video-item"><!-- videos/real/place-the-object/latent-bridge.mp4 --><div class="video-placeholder">Video</div><h4>Latent-Bridge</h4></article>
+            <article class="video-item"><!-- videos/real/place-the-object/sp-vla.mp4 --><div class="video-placeholder">Video</div><h4>SP-VLA</h4></article>
+            <article class="video-item"><!-- videos/real/place-the-object/comparison-5.mp4 --><div class="video-placeholder">Video</div><h4>Comparison 5</h4></article>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container narrow center">
+      <p>This website follows the format of the <a href="https://nerfies.github.io/">Nerfies</a> project page.</p>
+    </div>
+  </footer>
+</body>
+</html>
