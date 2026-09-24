@@ -60,27 +60,6 @@ h1 {
   font-size: 1.18rem;
 }
 
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-.button {
-  display: inline-block;
-  padding: 8px 17px;
-  border-radius: 999px;
-  color: #fff;
-  background: #363636;
-  font-size: .92rem;
-  text-decoration: none;
-}
-
-.button:hover {
-  background: #111;
-}
-
 .section {
   padding: 38px 0;
 }
@@ -112,6 +91,19 @@ h1 {
 
 .section-heading p {
   margin: 0;
+}
+
+.simulation-video-wrap {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.simulation-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  background: #000;
 }
 
 .video-grid {
